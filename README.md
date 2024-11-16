@@ -144,7 +144,7 @@ int main() {
     w.set_html("Thanks for using webview!");
     w.run();
   } catch (const webview::exception &e) {
-    std::cerr << e.what() << std::endl;
+    std::cerr << e.what() << '\n';
     return 1;
   }
 
@@ -291,10 +291,9 @@ Option                            | Description
 `WEBVIEW_INSTALL_TARGETS`         | Install targets
 `WEBVIEW_IS_CI`                   | Initialized by the `CI` environment variable
 `WEBVIEW_PACKAGE_AMALGAMATION`    | Package amalgamated library
-`WEBVIEW_PACKAGE_DEV`             | Package development library
 `WEBVIEW_PACKAGE_DOCS`            | Package documentation
 `WEBVIEW_PACKAGE_HEADERS`         | Package headers
-`WEBVIEW_PACKAGE_LIB`             | Package release library
+`WEBVIEW_PACKAGE_LIB`             | Package compiled libraries
 `WEBVIEW_STRICT_CHECKS`           | Make checks strict
 `WEBVIEW_STRICT_CLANG_FORMAT`     | Make clang-format check strict
 `WEBVIEW_STRICT_CLANG_TIDY`       | Make clang-tidy check strict
@@ -389,6 +388,8 @@ This project uses the CMake build system.
 
 In addition to the dependencies mentioned earlier in this document for developing *with* the webview library, the following are used during development *of* the webview library.
 
+* Amalgamation:
+  * Python >= 3.9
 * Checks:
   * `clang-format`
   * `clang-tidy`
